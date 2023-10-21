@@ -22,9 +22,3 @@ libpq-dev \
 # Enable modRewrite for Laravel.
 RUN mv /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled
 RUN /bin/sh -c a2enmod rewrite
-
-# Install Laravel using composer.
-RUN composer require laravel/installer
-
-# Add the composer path to the environment variables.
-RUN export PATH=/var/www/html/vendor/bin:$PATH
