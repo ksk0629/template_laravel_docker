@@ -1,46 +1,30 @@
+# Specify the version of docker compose.
 version: "3.9"
 
 services:
-  app:
-    build:
-      context: .
-      dockerfile: ./docker/app/Dockerfile
-    volumes:
-      - ./src/:/app
+ # Container for Laravel
+ app:
+   # Connect 8000 port of the host to 80 port of the container.
+   ports:
+     - "8000:80"
+   build: ./docker/app
+   container_name: laravel_app
+   volumes:
+     - ./:/var/www/html/
 
-  web:
-    build:
-      context: .
-      dockerfile: ./docker/web/Dockerfile
-    ports:
-      - 8080:80
-    depends_on:
-      - app
-      - db
-    volumes:
-      - ./src/:/app
-
-  db:
-    platform: linux/x86_64
-    build:
-      context: .
-      dockerfile: ./docker/db/Dockerfile
-    ports:
-      - 3306:3306
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: laravel_db
-      TZ: 'Europe/London'
-    volumes:
-      - /var/lib/docker/volumes/
-
-  mailhog:
-    image: mailhog/mailhog
-    ports:
-      - target: 8025
-        published: ${MAILHOG_PUBLISHED_PORT:-8025}
-        protocol: tcp
-        mode: host
-        
-volumes:
-   mysql-volume:
+ # Container for MySql.
+ db:
+   build: ./docker/db
+   container_name: laravel_db
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+     MYSQL_DATABASE: laravel_db
+     MYSQL_USER: laravel_user
+     MYSQL_PASSWORD: laravel_pass
+     TZ: "Europe/London"
+   command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+   volumes:
+     - ./docker/db/data:/var/lib/mysql
+     - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+   ports:
+     - 3306:3306
