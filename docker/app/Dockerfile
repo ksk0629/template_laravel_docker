@@ -17,6 +17,7 @@ unzip \
 vim \
 libpng-dev \
 libpq-dev \
+npm \
 && docker-php-ext-install pdo_mysql
 
 # Enable modRewrite for Laravel.
