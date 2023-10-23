@@ -19,6 +19,7 @@ libpng-dev \
 libpq-dev \
 npm \
 && docker-php-ext-install pdo_mysql
+RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
 # Enable modRewrite for Laravel.
 RUN mv /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled

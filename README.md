@@ -22,11 +22,16 @@ This repository is for creating a new laravel project.
 1. Set the encryption key: `php artisan key:generate`.
 2. Change the rights of the log directory: `chmod 777 storage/logs/`.
 3. Change the rights of the storage directory: `chmod -R guo+w storage`.
-4. Update the database settings in `.env`.
+4. Install the lates Node via nvm: `nvm install --lts`.
+5. Update npm: `npm update`.
+6. Update the database settings in `.env`.
     - `DB_HOST` should be the name of the database container.
     - `DB_DATANAME` should be the database set in `docker-compose.yml`.
     - `DB_USERNAME` should be the user name set in `docker-compose.yml`.
     - `DB_PASSWORD` should be the password set in `docker-compose.yml`.
+
+## Have a look!
+http://localhost:8000
 
 # Trouble shooting
 - Q. How to connect to the database?
