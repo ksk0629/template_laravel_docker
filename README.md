@@ -1,5 +1,5 @@
 # LARAVEL PROJECT
-This repository is for creating a new laravel project.
+This repository is for creating a new Laravel project.
 
 # Setup
 ## Adjust settings
@@ -8,7 +8,7 @@ This repository is for creating a new laravel project.
 3. Set the project name in `./docker/app/000-default.conf`.
 
 ## Docker container
-1. Create the comtainers: `docker-compose build`.
+1. Create the containers: `docker-compose build`.
 2. Kick the containers: `docker-compose up -d`.
 
 ## Laravel
@@ -23,7 +23,7 @@ This repository is for creating a new laravel project.
 1. Set the encryption key: `php artisan key:generate`.
 2. Change the rights of the log directory: `chmod 777 storage/logs/`.
 3. Change the rights of the storage directory: `chmod -R guo+w storage`.
-4. Install the lates Node via nvm: `nvm install --lts`.
+4. Install the latest Node via nvm: `nvm install --lts`.
 5. Update npm: `npm update`.
 6. Update the database settings in `.env`.
     - `DB_HOST` should be the name of the database container.
@@ -34,6 +34,6 @@ This repository is for creating a new laravel project.
 ## Have a look!
 http://localhost:8000
 
-# Trouble shooting
+# Troubleshooting
 - Q. How to connect to the database?
     - A. Go into the db container: `docker exec -it laravel_db bash`.
