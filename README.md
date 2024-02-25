@@ -3,8 +3,9 @@ This repository is for creating a new laravel project.
 
 # Setup
 ## Adjust settings
-1. Set the user and the password for the database in `./docker-compose.yml`.
-2. Set the project name in `./docker/app/000-default.conf`.
+1. Copy `./docker-compose_tmp.yml` into `.docker-compose.yml`.
+2. Set the user and the password for the database in `./docker-compose.yml`.
+3. Set the project name in `./docker/app/000-default.conf`.
 
 ## Docker container
 1. Create the comtainers: `docker-compose build`.

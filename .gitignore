@@ -2,3 +2,5 @@ vendor
 
 docker/db/data
 docker/db/my.cnf
+
+./docker-compose.yml
