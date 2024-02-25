@@ -26,7 +26,7 @@ This repository is for creating a new laravel project.
 5. Update npm: `npm update`.
 6. Update the database settings in `.env`.
     - `DB_HOST` should be the name of the database container.
-    - `DB_DATANAME` should be the database set in `docker-compose.yml`.
+    - `DB_DATABASE` should be the database set in `docker-compose.yml`.
     - `DB_USERNAME` should be the user name set in `docker-compose.yml`.
     - `DB_PASSWORD` should be the password set in `docker-compose.yml`.
 
